@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 // app.use('/api/files', fileRoutes);
 // app.use('/api/code', codeExecutionRoutes);
 
@@ -21,6 +21,7 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something went wrong!');
 });
+
 
 const PORT = process.env.PORT || 4500;
 
