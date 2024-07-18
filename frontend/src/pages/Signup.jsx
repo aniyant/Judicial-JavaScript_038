@@ -1,9 +1,11 @@
-const Signup = () => {
+import Signup from "../components/Auth/Signup.jsx"
+
+const SignupPage = () => {
   return (
     <div>
-      Signup
+      <Signup/>
     </div>
   )
 }
 
-export default Signup
+export default SignupPage;

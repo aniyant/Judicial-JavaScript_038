@@ -1,15 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { login, reset } from '../../store/authSlice';
+import { register, reset } from '../../store/authSlice';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-const Login = () => {
+const Signup = () => {
   const [formData, setFormData] = useState({
+    username: '',
     email: '',
     password: '',
+    password2: '',
   });
 
-  const { email, password } = formData;
+  const { username, email, password, password2 } = formData;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,7 +23,7 @@ const Login = () => {
       console.error(message);
     }
 
-    if (isSuccess || user) {
+    if (isSuccess) {
       navigate('/');
     }
 
@@ -37,11 +39,18 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const userData = {
-      email,
-      password,
-    };
-    dispatch(login(userData));
+
+    if (password !== password2) {
+      console.error('Passwords do not match');
+    } else {
+      const userData = {
+        username,
+        email,
+        password,
+      };
+
+      dispatch(register(userData));
+    }
   };
 
   if (isLoading) {
@@ -51,11 +60,22 @@ const Login = () => {
   return (
     <div>
       <section className="heading">
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
       </section>
 
       <section className="form">
         <form onSubmit={onSubmit}>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              id="username"
+              name="username"
+              value={username}
+              placeholder="Enter your username"
+              onChange={onChange}
+            />
+          </div>
           <div className="form-group">
             <input
               type="email"
@@ -78,6 +98,17 @@ const Login = () => {
               onChange={onChange}
             />
           </div>
+          <div className="form-group">
+            <input
+              type="password"
+              className="form-control"
+              id="password2"
+              name="password2"
+              value={password2}
+              placeholder="Confirm your password"
+              onChange={onChange}
+            />
+          </div>
 
           <div className="form-group">
             <button type="submit" className="btn btn-block">
@@ -90,4 +121,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
