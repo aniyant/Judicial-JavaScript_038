@@ -1,11 +1,19 @@
-import Signup from "../components/Auth/Signup.jsx"
+import Signup from "../components/Auth/Signup.jsx";
+import { Box } from '@mui/material'; 
 
 const SignupPage = () => {
   return (
-    <div>
-      <Signup/>
-    </div>
-  )
-}
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh', 
+      }}
+    >
+      <Signup />
+    </Box>
+  );
+};
 
 export default SignupPage;
