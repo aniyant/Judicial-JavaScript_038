@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:4500/api/execute';
+const API_URL = 'https://judicial-javascript-038.onrender.com/api/execute';
 
 const executeCode = async (file) => {
   try {
