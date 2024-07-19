@@ -5,6 +5,7 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const fileRoutes = require('./routes/fileRoutes');
 const codeExecutionRoutes = require('./routes/codeExecutionRoutes');
+// const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
 require('dotenv').config();
 
 const app = express();
@@ -14,8 +15,12 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 app.use('/api/auth', authRoutes);
-// app.use('/api/files', fileRoutes);
+app.use('/api/files', fileRoutes);
 // app.use('/api/code', codeExecutionRoutes);
+
+// app.use(notFound);
+// app.use(errorHandler);
+
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
