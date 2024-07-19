@@ -5,6 +5,7 @@ import './App.css'
 import LoginPage from './pages/Login.jsx';
 import SignupPage from './pages/Signup.jsx';
 import Navbar from './components/Navbar.jsx';
+import FileManager from './components/Files/FileManager.jsx';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       {/* <Route path="/editor" element={<Editor />} /> */}
+      <Route path="/files" element={<FileManager />} />
     </Routes>
     </>
   );
