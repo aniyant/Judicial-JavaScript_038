@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/files', fileRoutes);
-// app.use('/api/code', codeExecutionRoutes);
+app.use('/api/execute', codeExecutionRoutes);
 
 // app.use(notFound);
 // app.use(errorHandler);
