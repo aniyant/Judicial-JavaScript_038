@@ -61,6 +61,22 @@ export const deleteFile = createAsyncThunk('files/deleteFile', async (fileData, 
   }
 });
 
+export const updateFileContent = createAsyncThunk(
+  'files/updateFileContent',
+  async (fileData, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token;
+      return await fileService.updateFileContent(fileData, token);
+    } catch (error) {
+      const message =
+        (error.response && error.response.data && error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 const fileSlice = createSlice({
   name: 'files',
   initialState,
@@ -126,6 +142,12 @@ const fileSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
+      })
+      .addCase(updateFileContent.fulfilled, (state, action) => {
+        const index = state.files.findIndex((file) => file._id === action.payload._id);
+        if (index !== -1) {
+          state.files[index] = action.payload;
+        }
       });
   },
 });

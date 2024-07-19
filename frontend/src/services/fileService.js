@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/files';
+const API_URL = 'http://localhost:4500/api/files';
 
 const getFiles = async (token) => {
   const config = {
@@ -50,11 +50,24 @@ const deleteFile = async (fileData, token) => {
   return response.data;
 };
 
+const updateFileContent = async (fileData, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const response = await axios.put(`${API_URL}/${fileData._id}`, fileData, config);
+  return response.data;
+};
+
+
 const fileService = {
   getFiles,
   createFile,
   renameFile,
   deleteFile,
+  updateFileContent
 };
 
 export default fileService;

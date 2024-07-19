@@ -69,3 +69,21 @@ exports.deleteFile = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+exports.updateFileContent = async (req, res) => {
+  const { id, content } = req.body;
+
+  try {
+    const file = await File.findById(id);
+
+    if (file.user.toString() !== req.user._id.toString()) {
+      return res.status(401).json({ message: 'Not authorized' });
+    }
+
+    file.content = content;
+    const updatedFile = await file.save();
+    res.json(updatedFile);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+};
