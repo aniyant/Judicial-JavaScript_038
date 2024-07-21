@@ -42,13 +42,10 @@
     - npm run server (Run on your localhost)
 
 ### Screenshots
-![Screenshot (766)](https://github.com/user-attachments/assets/13bb37cb-d29f-40f5-b57f-d8f3e3137100)
+![Screenshot (770)](https://github.com/user-attachments/assets/952091a5-6ba7-4d93-ae1d-37b79d8a2837)
 
-![Screenshot (767)](https://github.com/user-attachments/assets/9998b001-b990-4a07-aaa8-d1aaad84b822)
+![Screenshot (771)](https://github.com/user-attachments/assets/6e701c7b-f709-4266-a84d-f2e676623df5)
 
-![Screenshot (768)](https://github.com/user-attachments/assets/dfe7e058-0003-4d18-baff-47476c5de6c3)
-
-![Screenshot (769)](https://github.com/user-attachments/assets/5adf0954-4f6f-482e-ad46-ee8ecd4e1af6)
 
 ### APIs Used
 - Render was used for deploying the API which was created using NodeJs.
