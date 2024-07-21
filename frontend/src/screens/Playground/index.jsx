@@ -96,6 +96,46 @@ const Playground = () => {
     return res.data;
   }
 
+  // const runCode = async () => {
+  //   openModal({
+  //     show: true,
+  //     modalType: 6,
+  //     identifiers: {
+  //       folderId: "",
+  //       cardId: "",
+  //     }
+  //   })
+  //   const language_id = languageMap[currentLanguage].id;
+  //   const source_code = encode(currentCode);
+  //   const stdin = encode(currentInput);
+
+  //   // pass these things to Create Submissions
+  //   const token = await postSubmission(language_id, source_code, stdin);
+
+  //   // get the output
+  //   const res = await getOutput(token);
+  //   const status_name = res.status.description;
+  //   const decoded_output = decode(res.stdout ? res.stdout : '');
+  //   const decoded_compile_output = decode(res.compile_output ? res.compile_output : '');
+  //   const decoded_error = decode(res.stderr ? res.stderr : '');
+
+  //   let final_output = '';
+  //   if (res.status_id !== 3) {
+  //     // our code have some error
+  //     if (decoded_compile_output === "") {
+  //       final_output = decoded_error;
+  //     }
+  //     else {
+  //       final_output = decoded_compile_output;
+  //     }
+  //   }
+  //   else {
+  //     final_output = decoded_output;
+  //   }
+  //   setCurrentOutput(status_name + "\n\n" + final_output);
+  //   closeModal();
+  // }
+
   const runCode = async () => {
     openModal({
       show: true,
@@ -104,37 +144,23 @@ const Playground = () => {
         folderId: "",
         cardId: "",
       }
-    })
-    const language_id = languageMap[currentLanguage].id;
-    const source_code = encode(currentCode);
-    const stdin = encode(currentInput);
+    });
+    
+    try {
+      console.log(currentLanguage);
+      const res = await axios.post('http://localhost:4500/execute', {
+        language:currentLanguage,  // Ensure languageMap returns a valid command or interpreter
+        code: currentCode,
+        input: currentInput,
+      });
 
-    // pass these things to Create Submissions
-    const token = await postSubmission(language_id, source_code, stdin);
-
-    // get the output
-    const res = await getOutput(token);
-    const status_name = res.status.description;
-    const decoded_output = decode(res.stdout ? res.stdout : '');
-    const decoded_compile_output = decode(res.compile_output ? res.compile_output : '');
-    const decoded_error = decode(res.stderr ? res.stderr : '');
-
-    let final_output = '';
-    if (res.status_id !== 3) {
-      // our code have some error
-      if (decoded_compile_output === "") {
-        final_output = decoded_error;
-      }
-      else {
-        final_output = decoded_compile_output;
-      }
+      setCurrentOutput(res.data.output);
+    } catch (error) {
+      setCurrentOutput(error.response.data.error);
+    } finally {
+      closeModal();
     }
-    else {
-      final_output = decoded_output;
-    }
-    setCurrentOutput(status_name + "\n\n" + final_output);
-    closeModal();
-  }
+  };
 
   const getFile = (e, setState) => {
     const input = e.target;
