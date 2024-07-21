@@ -58,8 +58,10 @@
 ### Tech Stack
 - Frontend
    - React.Js
+   - Monaco Editor
    - Redux
    - CSS
+   - Axios
 - Backend
    - Node.Js
 ## Collaborators to connect on Linkedin
