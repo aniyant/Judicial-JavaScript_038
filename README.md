@@ -11,11 +11,7 @@
 ### Frontend : https://onlinecodecrafter.netlify.app/login
 ### Backend : https://judicial-javascript-038-dock.onrender.com/
 ## Directory Structure : 
-![Screenshot (761)](https://github.com/user-attachments/assets/0905d23a-fac6-46c2-bec1-791c8ff60186)
-![Screenshot (762)](https://github.com/user-attachments/assets/3ebe0c1b-768f-4c58-8e7b-662fcdec43ce)
-![Screenshot (763)](https://github.com/user-attachments/assets/f02be4b2-a622-40f4-b2ed-20b0f6c056d4)
-![Screenshot (764)](https://github.com/user-attachments/assets/39cdf36f-0eaf-4e40-812a-b370bf30427e)
-![Screenshot (765)](https://github.com/user-attachments/assets/715b8bae-ce2a-462f-9393-cb8dc27d2d98)
+![Screenshot (770)](https://github.com/user-attachments/assets/952091a5-6ba7-4d93-ae1d-37b79d8a2837) ![Screenshot (771)](https://github.com/user-attachments/assets/6e701c7b-f709-4266-a84d-f2e676623df5)
 
 ## Video Walkthrough of the project
 
@@ -42,9 +38,13 @@
     - npm run server (Run on your localhost)
 
 ### Screenshots
-![Screenshot (770)](https://github.com/user-attachments/assets/952091a5-6ba7-4d93-ae1d-37b79d8a2837)
+![Screenshot (775)](https://github.com/user-attachments/assets/dbcc2e39-d7de-49d3-b233-be553f10f157)
 
-![Screenshot (771)](https://github.com/user-attachments/assets/6e701c7b-f709-4266-a84d-f2e676623df5)
+![Screenshot (772)](https://github.com/user-attachments/assets/fee3a7c1-0d18-407e-b5b6-95e13330f562)
+
+![Screenshot (773)](https://github.com/user-attachments/assets/c69d215d-9715-43f0-8553-a2c8c78dcee0)
+
+![Screenshot (774)](https://github.com/user-attachments/assets/2f148e1f-8c4e-4109-ad39-37ebff1fc424)
 
 
 ### APIs Used
