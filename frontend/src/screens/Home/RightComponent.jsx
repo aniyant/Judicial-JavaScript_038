@@ -124,9 +124,9 @@ const RightComponent = () => {
     <StyledRightComponent>
       <Header>
         <Heading size="large">
-         My Code <span>Craft</span>
+         <span style={{color:'#ff914c'}}>Code</span><span style={{color:'#004aad'}}>Crafter</span>
         </Heading>
-        <AddButton onClick={() => {localStorage.removeItem('user');navigate('/login')}}><span>Logout</span></AddButton>
+        <AddButton onClick={() => {localStorage.removeItem('user');navigate('/login')}}><span style={{color:'red'}}>Logout</span></AddButton>
       </Header>
 
       {
@@ -153,7 +153,7 @@ const RightComponent = () => {
                     folderId: folderId,
                     cardId: "",
                   }
-                })}><span>+</span> New Craft</AddButton>
+                })}><span>+</span> New File</AddButton>
               </FolderIcons>
             </Header>
 

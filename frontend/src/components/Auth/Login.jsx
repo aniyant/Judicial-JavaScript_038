@@ -10,6 +10,7 @@ const Login = () => {
     email: '',
     password: '',
   });
+  const [showMessage, setShowMessage] = useState('');
 
   const { email, password } = formData;
 
@@ -21,7 +22,9 @@ const Login = () => {
   useEffect(() => {
     if (isError) {
       console.error(message);
+      setShowMessage(message);
     }
+
 
     if (isSuccess) {
       console.log('Logged in successfully');
@@ -60,6 +63,7 @@ const Login = () => {
       <div className="login-box">
         <section className="heading">
           <h1>Login</h1>
+          <p style={{color:'red'}}>{showMessage}</p>
         </section>
 
         <section className="form">

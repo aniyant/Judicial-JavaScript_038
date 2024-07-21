@@ -42,8 +42,9 @@ const Navbar = ({ isFullScreen }) => {
         navigate('/')
       }}>
         <Logo src={logo} />
-        <MainHeading>
-          <span>Code</span> Craft
+        <MainHeading> 
+          <span style={{color:'#ff914c'}}>Code </span> 
+          <span style={{color:'#004aad'}}> Crafter</span>
         </MainHeading>
       </NavbarContent>
     </NavbarContainer>

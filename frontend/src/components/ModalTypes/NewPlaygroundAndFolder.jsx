@@ -57,7 +57,7 @@ const NewPlaygroundAndFolder = () => {
   return (
     <>
       <Header>
-        <h2>Create New Playground & Create New Folder</h2>
+        <h2>Create New Folder & Create New File</h2>
         <CloseButton onClick={() => closeModal()}>
           <IoCloseSharp />
         </CloseButton>
@@ -66,7 +66,7 @@ const NewPlaygroundAndFolder = () => {
         <label>Enter Folder Name</label>
         <input type='text' onChange={(e) => setFolderName(e.target.value)} />
 
-        <label>Enter Card Name</label>
+        <label>Enter File Name</label>
         <input type='text' onChange={(e) => setPlaygroundName(e.target.value)} />
 
         <Select
@@ -78,7 +78,7 @@ const NewPlaygroundAndFolder = () => {
         <button onClick={() => {
           addPlaygroundAndFolder(folderName, playgroundName, language.label)
           closeModal();
-        }}> Create Playground </button>
+        }}> Create Folder </button>
       </InputWithSelect>
     </>
   )

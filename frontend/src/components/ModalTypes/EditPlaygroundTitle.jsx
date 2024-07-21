@@ -14,7 +14,7 @@ const EditPlaygroundTitle = () => {
   return (
     <>
       <Header>
-        <h2>Edit Card Title</h2>
+        <h2>Edit File Name</h2>
         <CloseButton onClick={() => closeModal()}>
           <IoCloseSharp />
         </CloseButton>
@@ -24,7 +24,7 @@ const EditPlaygroundTitle = () => {
         <button onClick={() => {
           editPlaygroundTitle(folderId, cardId, playgroundTitle)
           closeModal()
-        }}>Update Title</button>
+        }}>Update Name</button>
       </Input>
     </>
   )

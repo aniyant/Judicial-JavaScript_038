@@ -14,7 +14,7 @@ const EditFolder = () => {
   return (
     <>
       <Header>
-        <h2>Edit Folder Title</h2>
+        <h2>Edit Folder Name</h2>
         <CloseButton onClick={() => closeModal()}>
           <IoCloseSharp />
         </CloseButton>
@@ -24,7 +24,7 @@ const EditFolder = () => {
         <button onClick={() => {
           editFolderTitle(folderId, folderTitle)
           closeModal()
-        }} >Update Title</button>
+        }} >Update Name</button>
       </Input>
     </>
   )

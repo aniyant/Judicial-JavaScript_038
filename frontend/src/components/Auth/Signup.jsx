@@ -12,6 +12,7 @@ const Signup = () => {
     password: '',
     password2: '',
   });
+  const [showMessage,setShowMessage] = useState('');
 
   const { username, email, password, password2 } = formData;
 
@@ -22,7 +23,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (isError) {
-      console.error(message);
+      setShowMessage(message);
     }
 
     if (isSuccess) {
@@ -43,7 +44,7 @@ const Signup = () => {
     e.preventDefault();
 
     if (password !== password2) {
-      console.error('Passwords do not match');
+      setShowMessage('Passwords do not match');
     } else {
       const userData = {
         username,
@@ -68,6 +69,7 @@ const Signup = () => {
       <div className="signup-box">
         <section className="heading">
           <h1>Sign Up</h1>
+          <p style={{color:'red'}}>{showMessage}</p>
         </section>
 
         <section className="form">

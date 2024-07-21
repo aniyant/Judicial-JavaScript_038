@@ -226,7 +226,7 @@ const Playground = () => {
               </div>
               <div style={
                 {
-                  backgroundColor: '#ff914c', /* Green */
+                  backgroundColor: 'red', /* Green */
                   border: 'none',
                   color: 'white',
                   padding: '16px 32px',

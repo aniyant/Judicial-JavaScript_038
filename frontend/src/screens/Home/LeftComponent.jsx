@@ -73,8 +73,8 @@ const LeftComponent = () => {
         <StyledLeftComponent>
             <ContentContainer>
                 <Logo src={logo} alt="" />
-                <MainHeading> <span>Code</span> Crafter</MainHeading>
-                <SubHeading>Code. Craft. Debug.</SubHeading>
+                <MainHeading> <span style={{color:'#ff914c'}}>Code</span> <span style={{color:'#004aad'}}>Crafter</span></MainHeading>
+                <SubHeading>Code, Craft, Compile</SubHeading>
                 <AddNewButton onClick={() => openModal({
                     show: true,
                     modalType: 3,
@@ -82,7 +82,7 @@ const LeftComponent = () => {
                         folderId: "",
                         cardId: "",
                     }
-                })} ><span>+</span> Create New Craft</AddNewButton>
+                })}><span>+</span> Create New Folder</AddNewButton>
             </ContentContainer>
         </StyledLeftComponent>
     )

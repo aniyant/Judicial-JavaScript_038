@@ -55,7 +55,7 @@ const NewPlayground = () => {
   return (
     <>
       <Header>
-        <h2>Create New Craft</h2>
+        <h2>Create New File</h2>
         <CloseButton onClick={() => closeModal()}>
           <IoCloseSharp />
         </CloseButton>
@@ -73,7 +73,7 @@ const NewPlayground = () => {
         <button onClick={() => {
           addPlayground(folderId, cardTitle, language.label)
           closeModal();
-        }}> Create Craft </button>
+        }}> Create File </button>
       </InputWithSelect>
     </>
   )
