@@ -147,6 +147,7 @@ const EditorContainer = ({
   ]
 
   const languageOptions = [
+    {value: 'c',label: 'c'},
     { value: 'cpp', label: 'cpp' },
     { value: 'javascript', label: 'javascript' },
     { value: 'java', label: 'java' },

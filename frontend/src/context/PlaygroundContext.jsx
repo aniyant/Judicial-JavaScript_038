@@ -4,33 +4,44 @@ import { v4 as uuid } from 'uuid';
 export const PlaygroundContext = createContext();
 
 export const languageMap = {
+    "c": {
+        id: 50,
+        defaultCode: `#include <stdio.h>\n\nint main() {\n    // Uncomment the following lines to test with input\n    /*\n    char input[100];\n    fgets(input, sizeof(input), stdin);\n    printf("Input: %s", input);\n    */\n    printf("Hello World!");\n    return 0;\n}\n`
+    },
+
     "cpp": {
         id: 54,
         defaultCode: 
         "#include <iostream>\n"
         + "using namespace std;\n\n"
         + "int main() {\n"
-        + '\tcout << "Hello World!";\n'
-        + "\treturn 0;\n"
-        + "}",
+        + '    // Uncomment the following lines to test with input\n'
+        + '    /*\n'
+        + '    string input;\n'
+        + '    getline(cin, input);\n'
+        + '    cout << "Input: " << input;\n'
+        + '    */\n'
+        + '    cout << "Hello World!";\n'
+        + '    return 0;\n'
+        + '}\n'
     },
+
     "java": {
         id: 62,
-        defaultCode: `public class Main {
-            public static void main(String[] args) {
-                System.out.println("Hello World!");
-            }
-    }`,
+        defaultCode: `import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        // Uncomment the following lines to test with input\n        /*\n        Scanner scanner = new Scanner(System.in);\n        String input = scanner.nextLine();\n        System.out.println("Input: " + input);\n        */\n        System.out.println("Hello World!");\n    }\n}\n`
     },
+
     "python": {
         id: 71,
-        defaultCode: `print("Hello World!")`,
+        defaultCode: `# Uncomment the following lines to test with input\n# input_text = input()\n# print(f"Input: {input_text}")\n\nprint("Hello World!")`
     },
+
     "javascript": {
         id: 63,
-        defaultCode: `console.log("Hello World!");`,
+        defaultCode: `// Uncomment the following lines to test with input\n/*\nconst input = require('fs').readFileSync(0, 'utf-8');\nconsole.log("Input:", input);\n*/\n\nconsole.log("Hello World!");`
     }
 }
+
 
 const PlaygroundProvider = ({ children }) => {
 

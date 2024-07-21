@@ -148,12 +148,13 @@ const Playground = () => {
     
     try {
       console.log(currentLanguage);
-      const res = await axios.post('https://judicial-javascript-038.onrender.com/execute', {
+      console.log(currentInput);
+      const res = await axios.post('http://localhost:4500/api/execute', {
         language:currentLanguage,  // Ensure languageMap returns a valid command or interpreter
         code: currentCode,
         input: currentInput,
       });
-
+      // console.log(res);
       setCurrentOutput(res.data.output);
     } catch (error) {
       setCurrentOutput(error.response.data.error);
