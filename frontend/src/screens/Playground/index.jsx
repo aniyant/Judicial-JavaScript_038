@@ -5,10 +5,10 @@ import OutputConsole from './OutputConsole'
 import Navbar from './Navbar'
 import styled from 'styled-components'
 import { useNavigate, useParams } from 'react-router-dom'
-import { languageMap, PlaygroundContext } from '../../context/PlaygroundContext'
+import { PlaygroundContext } from '../../context/PlaygroundContext'
 import { ModalContext } from '../../context/ModalContext'
 import Modal from '../../components/Modal'
-import { Buffer } from 'buffer'
+// import { Buffer } from 'buffer'
 import axios from 'axios'
 import { Console, Header} from './InputConsole'
 const MainContainer = styled.div`
@@ -45,56 +45,56 @@ const Playground = () => {
     savePlayground(folderId, playgroundId, currentCode, currentLanguage)
   }
 
-  const encode = (str) => {
-    return Buffer.from(str, "binary").toString("base64")
-  }
+  // const encode = (str) => {
+  //   return Buffer.from(str, "binary").toString("base64")
+  // }
 
-  const decode = (str) => {
-    return Buffer.from(str, 'base64').toString()
-  }
+  // const decode = (str) => {
+  //   return Buffer.from(str, 'base64').toString()
+  // }
 
-  const postSubmission = async (language_id, source_code, stdin) => {
-    const options = {
-      method: 'POST',
-      url: 'https://judge0-ce.p.rapidapi.com/submissions',
-      params: { base64_encoded: 'true', fields: '*' },
-      headers: {
-        'content-type': 'application/json',
-        'Content-Type': 'application/json',
-        'X-RapidAPI-Key': 'b4e5c5a05fmsh9adf6ec091523f8p165338jsncc58f31c26e1',
-        'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
-      },
-      data: JSON.stringify({
-        language_id: language_id,
-        source_code: source_code,
-        stdin: stdin
-      })
-    };
+  // const postSubmission = async (language_id, source_code, stdin) => {
+  //   const options = {
+  //     method: 'POST',
+  //     url: 'https://judge0-ce.p.rapidapi.com/submissions',
+  //     params: { base64_encoded: 'true', fields: '*' },
+  //     headers: {
+  //       'content-type': 'application/json',
+  //       'Content-Type': 'application/json',
+  //       'X-RapidAPI-Key': 'b4e5c5a05fmsh9adf6ec091523f8p165338jsncc58f31c26e1',
+  //       'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
+  //     },
+  //     data: JSON.stringify({
+  //       language_id: language_id,
+  //       source_code: source_code,
+  //       stdin: stdin
+  //     })
+  //   };
 
-    const res = await axios.request(options);
-    return res.data.token
-  }
+  //   const res = await axios.request(options);
+  //   return res.data.token
+  // }
 
-  const getOutput = async (token) => {
-    // we will make api call here
-    const options = {
-      method: 'GET',
-      url: "https://judge0-ce.p.rapidapi.com/submissions/" + token,
-      params: { base64_encoded: 'true', fields: '*' },
-      headers: {
-        'X-RapidAPI-Key': '3ed7a75b44mshc9e28568fe0317bp17b5b2jsn6d89943165d8',
-        'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
-      }
-    };
+  // const getOutput = async (token) => {
+  //   // we will make api call here
+  //   const options = {
+  //     method: 'GET',
+  //     url: "https://judge0-ce.p.rapidapi.com/submissions/" + token,
+  //     params: { base64_encoded: 'true', fields: '*' },
+  //     headers: {
+  //       'X-RapidAPI-Key': '3ed7a75b44mshc9e28568fe0317bp17b5b2jsn6d89943165d8',
+  //       'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
+  //     }
+  //   };
 
-    // call the api
-    const res = await axios.request(options);
-    if (res.data.status_id <= 2) {
-      const res2 = await getOutput(token);
-      return res2.data;
-    }
-    return res.data;
-  }
+  //   // call the api
+  //   const res = await axios.request(options);
+  //   if (res.data.status_id <= 2) {
+  //     const res2 = await getOutput(token);
+  //     return res2.data;
+  //   }
+  //   return res.data;
+  // }
 
   // const runCode = async () => {
   //   openModal({
@@ -149,7 +149,7 @@ const Playground = () => {
     try {
       console.log(currentLanguage);
       console.log(currentInput);
-      const res = await axios.post('http://localhost:4500/api/execute', {
+      const res = await axios.post('https://judicial-javascript-038-dock.onrender.com/api/execute', {
         language:currentLanguage,  // Ensure languageMap returns a valid command or interpreter
         code: currentCode,
         input: currentInput,
