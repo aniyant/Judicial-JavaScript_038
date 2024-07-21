@@ -28,28 +28,6 @@
 - **Offline Mode**: Continue coding without an internet connection and sync changes when back online.
   
 ## Screenshots
-![Screenshot (766)](https://github.com/user-attachments/assets/13bb37cb-d29f-40f5-b57f-d8f3e3137100)
-- Signup & Login 
-- Authentication
-- Multi-Language Support
-- Code Execution
-- Real-time Code Editing
-- Responsive User Interface
-- Backend Integration
-- Output Display
-- Error Handling
-- Security Measures
-- Code Execution Logging
-- Environment Configuration
-  
-### Installation & Getting started
-- git clone (Repo link)
-- Frontend : npm i (install all packeges)
-    - npm start (Run on your localhost)
-- Backend : npm i (install all packeges)
-    - npm run server (Run on your localhost)
-
-### Screenshots
 ![Screenshot (775)](https://github.com/user-attachments/assets/dbcc2e39-d7de-49d3-b233-be553f10f157)
 
 ![Screenshot (772)](https://github.com/user-attachments/assets/fee3a7c1-0d18-407e-b5b6-95e13330f562)
