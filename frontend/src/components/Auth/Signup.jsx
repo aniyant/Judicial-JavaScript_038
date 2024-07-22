@@ -124,6 +124,9 @@ const Signup = () => {
                 Submit
               </button>
             </div>
+            <div className="register-link">
+              <p>Already a user? <NavLink to='/login'>Login</NavLink></p>
+            </div>
           </form>
         </section>
       </div>
