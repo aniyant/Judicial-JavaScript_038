@@ -61,8 +61,10 @@
 -**UI Components**
  - **Styled Components**: For writing CSS-in-JS to style the application.
 ### Editor Features
-- **Syntax Highlighting**: Supports multiple languages (HTML, CSS, JavaScript, Python, etc.).
+- **Syntax Highlighting**: Supports multiple languages (JavaScript, Python, Java, CPP, etc.).
 - **Auto-Completion**: Helps in writing code faster with suggestions.
+- **Auto-Brackets**: All brackets gets closed.
+- **Auto-Indentation**: Indention is automatic.
 - **Themes**: Multiple themes to choose from for a personalized coding environment.
 - **Error Highlighting**: Identifies and highlights errors in the code.
 
